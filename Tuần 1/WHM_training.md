@@ -50,11 +50,12 @@ Dùng lệnh ps aux | grep <user>
 ![image](https://github.com/user-attachments/assets/f2ec2248-d990-4aa1-bbb1-11cd29e515fd)
 
 
-_Để tìm kiếm subdomain hoặc tìm kiếm add-on domain của một user_
+**Để kiểm tra log của một web hosting**
 
-- Cách 1: Sử dụng giao diện: Xem phần List Subdomain trong Account Information
-![image](https://github.com/user-attachments/assets/2e544d0f-2984-4dbc-a4ab-7fc64e9c9d55)
+Check log có thể là một cách để xác định xem web đó có đang bị DDoS không, địa chỉ của file log nằm trong địa chỉ:
 
-- Cách 2: Dùng lệnh cat /etc/userdatadomains | grep [domain]
-![image](https://github.com/user-attachments/assets/791eaa2c-0d34-465d-b21f-080a238c57af)
+/var/log/apache2/domlogs/<domain> (không có ssl)
 
+/var/log/apache2/domlogs/<domain>-ssl_log (có ssl)
+
+![image](https://github.com/user-attachments/assets/31546577-3ace-4257-bc2f-688796f0e2e4)
