@@ -16,14 +16,27 @@ Tổng quan giao diện:
 
 Ở phần thông số có vài chỗ lưu ý ở phần Disk Usage vs Database Disk Usage và Entry Processes vs Number of Processes.
 
-_** Với Disk Usage & Database Disk Usage, dưới đây là 2 hình ảnh trước và sau khi em tạo một trang web wordpress:_
+_**Với Disk Usage & Database Disk Usage**_
+
+Dưới đây là 2 hình ảnh trước và sau khi em tạo một trang web wordpress:
 ![image](https://github.com/user-attachments/assets/ca9cc663-0e2a-4ee2-8572-20d2d5f29fb3)
 
 ![image](https://github.com/user-attachments/assets/f0e7beb4-7b6d-4cfc-ae2f-75723d04a8af)
 
 -> Xem xét sự khác biệt thì em thấy source wordpress được lưu vào disk usage, còn dung lượng database được lưu vào database disk usage, nó chia ra như vậy em tìm hiểu là do database và file của mysql được sở hữu của user mysql chứ không phải cpanel, nên nếu user cpanel thao tác tác vụ vượt qua quota của Disk Usage thì họ không thể thao tác thêm, còn nếu client thao tác trên hosting mà khiến Database disk usage tăng lên thì vẫn có thể thao tác vì không liên quan đến disk usage.
 
-** Với Number of Processes và Entry Processes.
+ _**Với Number of Processes và Entry Processes**_
+
+Em có dùng thử tool load test (siege) để test thử 30 kết nối đồng thời truy cập vào trang web, kết quả là thông số Number of Processes và CPU tăng, còn Entry Processes không tăng
+
+![image](https://github.com/user-attachments/assets/d661cb36-e5cc-471b-8b85-488e9f1bd91c)
+
+Theo em tìm hiểu webserver OpenLiteSpeed sử dụng lsphp, khi request mới tới server thì nó sẽ sử dụng tiếp tiến trình lsphp thay vì mở một tiến trình php mới.
+
+Thử ngay và luôn, trong lúc em load test thì mở top để kiểm tra thì đúng như vậy, Number of Processes lsphp tăng một đống.
+![image](https://github.com/user-attachments/assets/102d6e63-8243-46dc-8849-e9ef48372924)
+
+Vậy sự khác biệt là: OpenLiteSpeed sử dụng lsphp thay vì Apache CGI hoặc PHP-FPM thông thường, lsphp là một tiến trình PHP được quản lý riêng, nó giữ kết nối mở lâu hơn và không tạo thêm Entry Processes như Apache.
 
 **Files:**
 - File Manager: giúp quản lý file hay thư mục dễ dàng, trực quan hơn với giao diện, thông thường khi sử dụng phần mềm FTP client để tải file thì ta sẽ sử dụng thông qua giao thức FPT port 21, còn File Manager trên cpanel sử dụng giao thức HTTPs để up download file.
