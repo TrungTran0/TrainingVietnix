@@ -1,4 +1,5 @@
-1. Hosting là gì ?
+**1. Hosting là gì ?**
+
 Thông thường khi muốn build một trang web chúng ta phải cần một server để chạy dịch vụ, cần thuê leased line từ nhà mạng để có được IP tĩnh để người dùng truy cập vào IP đó đến server của chúng ta, ngoài ra còn một số điều kiện khác. Để có được những điều trên là rất tốn kém, cho nên Hosting xuất hiện để giúp chúng ta giải quyết điều đó. Hosting là một dịch vụ cho thuê không gian lữu trữ trên server của nhà cung cấp, chúng ta chỉ cần đẩy source code lên trên đó và trỏ tên miền, vậy là chúng ta đã có được một website có thể truy cập ngoài public.
 
 Ngoài ra hosting không chỉ dùng để lưu trữ code website mà còn dùng để lưu trữ email, database, file,...
@@ -10,7 +11,8 @@ Phân loại dễ hiểu về hosting:
 - Cloud Hosting: đây là kiểu lưu trữ website trên cloud, nghĩa là thay vì chúng ta lưu trữ trên một server vật lý đơn lẻ, thì cloud hosting sẽ kết nối nhiều server lại với nhau (cluster).
 
 
-2. Kiến thức để thuê hosting, sản phẩm công ty.
+**2. Kiến thức để thuê hosting, sản phẩm công ty.**
+
 Do có nhiều loại hosting nên sẽ được chia ra thành rất nhiều kiểu, vì vậy chúng ta cần biết về thông số của chúng:
 - Đầu tiên là CPU, đây là vấn đề quan trọng cần chọn kĩ tùy theo dịch vụ của bạn cần sử dụng là gì, CPU càng mạnh sẽ xử lý các tiến trình nhanh giúp trang web hoạt động mượt.
  + Core quyết định số lượng tác vụ chạy đồng thời, nếu như trang web với các truy vấn cơ bản thì nên sử dụng CPU nhiều core.
@@ -24,14 +26,14 @@ Do có nhiều loại hosting nên sẽ được chia ra thành rất nhiều ki
  + EV SSL: doanh nghiệp cực lớn, giá cao.
 
 
-3. DNS là gì ?
+**3. DNS là gì ?**
 - DNS viết tắt cho Domain Name System, nó giúp phân giải tên miền của trang web thành địa chỉ IP. Nó giống việc chúng ta chỉ nhớ tên người dùng trong danh bạ chứ không nhớ số điện thoại của họ. Giống việc ta chỉ biết địa chỉ trang web là facebook.com chứ không nhớ địa chỉ IP của nó.
 
 - Vậy thì DNS nó phân giải tên miền thế nào ?
 Để biết nó phân giải thế nào thì mình cần biết cấu trúc của tên miền:
 ![image](https://github.com/user-attachments/assets/0ab2814a-f37f-4068-a0d1-18b90e9c4d16)
 
-- Cấu trúc của một domain:
+_Cấu trúc của một domain:_
  + Protocol: là giao thức, một quy tắc chuẩn mà các dữ liệu khi truyền đi phải tuân theo quy tắc của giao thức đó
  + Sub-domain: là phần đứng trước domain chính, có thể có hoặc không.
  + Second Level Domain: là domain chính và là phần quan trọng nhất, nó chứa thông tin của đơn vị đăng ký tên miền trên nhà cung cấp tên miền.
