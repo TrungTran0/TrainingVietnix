@@ -29,6 +29,8 @@ Do có nhiều loại hosting nên sẽ được chia ra thành rất nhiều ki
 
 - Vậy thì DNS nó phân giải tên miền thế nào ?
 Để biết nó phân giải thế nào thì mình cần biết cấu trúc của tên miền:
+![image](https://github.com/user-attachments/assets/0ab2814a-f37f-4068-a0d1-18b90e9c4d16)
+
 - Cấu trúc của một domain:
  + Protocol: là giao thức, một quy tắc chuẩn mà các dữ liệu khi truyền đi phải tuân theo quy tắc của giao thức đó
  + Sub-domain: là phần đứng trước domain chính, có thể có hoặc không.
