@@ -21,3 +21,15 @@
 - Spam Filter: lọc các email được biết là spam nó sẽ chuyển tới Spam Box, Spam box sẽ chuyển tất cả message được tính là spam vào một thư mục riêng để mình xem xét dựa trên spam score đã được đánh dấu, khi message đã đạt ngưỡng là spam thì thằng Spam Threshold Score sẽ gắn các tag "SPAM" vào subject của cái mail đó. Hoặc thay vì chuyển tới Spam Box thì mình có thể kích hoạt Auto-Delete để tự động xóa nó luôn.
 - Encryption: giúp generate public key và private key bởi GnuPG dựa trên thông tin mình nhập vào.
 - Email Disk Usage: chọn tài khoản email để xem dung lượng sử dụng trên từng thư mục của account đó. Nhưng nên xem bằng Email Account hơn.
+
+
+- Một số nguyên nhân lỗi gửi nhận mail:
+  + Do nội dung chứa các từ ngữ bị đánh dấu là spam
+  + Do domain/IP nằm trong black list
+  + Do lỗi bên node email relay
+  + Do code auto response bị lỗi
+  + Do lỗi ứng dụng mail client (outlook new)
+ 
+- Một số nguyên nhân gửi nhận mail chậm:
+  + Do mạng global
+  + Do ứng dụng client
