@@ -28,8 +28,26 @@ Trong đó gồm các thư mục:
 - Wesbserver mặc định là Apache
 
 **4. VestaCP**
-
+- Sử dụng port 8083
 - Control panel này đã cũ và cũng chỉ hỗ trợ trên những hệ điều hành cũ
-- Webserver là Apache/Nginx
+- Sử dụng nginx làm reverse proxy và apache2 làm web server
 - Hỗ trợ nhiều user nhưng không hỗ trợ cho reseller
-- Cấu trúc file của nó cũng sẽ theo cấu trúc /home/domain_name
+- DNS server sử dụng bind9
+- Hõ trợ SSL bằng Let's encrypt
+- FTP server sử dụng vsftpd, dùng fpt client để kết nối chứ không hỗ trợ file manager
+- Địa chỉ docroot nằm ở: /home/[user]/web/...
+- Không hỗ trợ Multi php: build thêm thủ công bằng cách:
+  + Với cgi: 
+	wget https://raw.githubusercontent.com/rikcage/vst-php-selector/main/vst-php-cgi.sh 
+	chmod a+x ./vst-php-cgi.sh 
+	sudo ./vst-php-cgi.sh 
+  + Với fcgi:
+	wget https://raw.githubusercontent.com/rikcage/vst-php-selector/main/vst-php-fcgid.sh 
+	chmod a+x ./vst-php-fcgid.sh 
+	sudo ./vst-php-fcgid.sh 
+  + Với fpm:
+	wget https://raw.githubusercontent.com/rikcage/vst-php-selector/main/vst-php-fpm.sh 
+	chmod a+x ./vst-php-fpm.sh 
+	sudo ./vst-php-fpm.sh
+- Có hỗ trợ backup sẵn
+  ![image](https://github.com/user-attachments/assets/b9576f01-0850-4372-a493-4fc580cbf2f5)
