@@ -63,3 +63,16 @@ Cuối cùng thưc hiện import ceertificate vào là hoàn tất
 
 _**Cài đặt thêm một vài plugin phổ biến**_
 ![image](https://github.com/user-attachments/assets/5861ebec-72cb-4197-ad92-a5f12d9df25d)
+
+
+**3. Cài đặt SQL Server**
+
+_**Cài SQL Server 2019**_
+![image](https://github.com/user-attachments/assets/ab2c46da-ec49-469d-9bf8-5eecbb17ca68)
+![image](https://github.com/user-attachments/assets/23e45420-2300-4378-917f-57aa0d60dabc)
+_**Cài SQL Server 2008**_
+![image](https://github.com/user-attachments/assets/14161ccd-65cf-4f61-b5b9-9e4b34614b41)
+_**Cài SQL Server 2012**_
+![image](https://github.com/user-attachments/assets/ee360ff1-3eba-4429-9cb8-ddb3a5aed121)
+_**Cài SQL Server 2016**_
+![image](https://github.com/user-attachments/assets/d1c2e39f-cc14-41e6-936b-1376f6980d5a)
