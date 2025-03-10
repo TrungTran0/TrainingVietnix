@@ -16,3 +16,7 @@
 ### 2. [Certification cPanel Professional Certification Exam CPP](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%201/Cert/certification-cPanel-Professional-Certification-Exam-CPP-trungnormie.pdf)
 ### 3. [Certification cPanel & WHM System Administrator I Certification Exam CWSA 1](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%201/Cert/certification-cPanel-%26-WHM-System-Administrator-I-Certification-Exam-CWSA-1-trungnormie.pdf)
 ### 4. [Certification cPanel & WHM System Administrator II Certification Exam CWSA 2](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%201/Cert/certification-cPanel-%26-WHM-System-Administrator-II-Certification-Exam-CWSA-2-trungnormie.pdf)
+
+## Tuần 3:
+### 1. [Sự khác nhau giữa Nginx và Apache](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%203/S%E1%BB%B1%20kh%C3%A1c%20nhau%20gi%E1%BB%AFa%20Nginx%20v%C3%A0%20Apache.md)
+### 2. [Lợi ích khi dùng Nginx làm reverse proxy](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%203/L%E1%BB%A3i%20%C3%ADch%20khi%20d%C3%B9ng%20Nginx%20l%C3%A0m%20reverse%20proxy.md)
