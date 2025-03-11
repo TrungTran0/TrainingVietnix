@@ -7,13 +7,12 @@ PING vietnix.vn (103.90.224.90) 56(84) bytes of data.
 64 bytes from 103.90.224.90: icmp_seq=4 ttl=53 time=8.49 ms
 TTL (Time-to-live): là thời gian tồn tại của một gói tin trước khi bị xóa, mỗi khi gói tin đi qua một hop thì ttl sẽ giảm đi 1. TTL giúp lưu 
 Time: là thời gian mà gói tin đi từ nguồn đến đích và quay trở lại, time giúp ta biết thời gian phản hồi.
+
 2. SSH command
 
-Dùng password: 
-Command:
 Dùng password: ssh user@host -> nhập password
-Dùng key: ssh -i key.pem user@host
-Dùng port custom: ssh user@root -p number_port
+Dùng key: ssh -i key.pem user@host (sử dụng private key)
+Dùng port custom: ssh user@root -p number_port (nếu server của mình cần cấu hình trước)
 
 3. scp command
 
