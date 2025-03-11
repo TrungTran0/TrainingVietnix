@@ -182,10 +182,20 @@ Show file ẩn:
 show tiến trình: ps aux
 kill tiến trình: kill <process> ||||| kill 897 -> kill process có PID 987
 
-26. top command
+**26. top command**
 
 Dùng lệnh top để kiểm tra tài nguyên cpu đang sử dụng của một vài process đang chạy
 Load average: chỉ số này hiển thị thời gian load hệ thống trong 1 phút, 5 phút và 15 phút cuối. Load average mỗi hệ thống sẽ khác nhau, với single-core thì load average nên dưới 1, còn multi-core thì nên dưới số core. Với average là 0.75 nghĩa là 75%.
 Zombie process: Số lượng tiến trình không tồn tại hoặc bị hỏng
 Sleeping process: 
 Giải thích về Load average, us, sy, ni, id, wa, hi, si, st, zombie process, sleeping process
+
+27. free command
+
+Giải thích ram used, free, shared, buff/cache, free
+
+28. df command
+
+Xem dung lượng disk
+
+Phân vùng / là gì
