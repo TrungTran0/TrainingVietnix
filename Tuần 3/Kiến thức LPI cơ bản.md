@@ -75,13 +75,13 @@ tail -f /path/file -> giúp phần đuôi của file trực tiếp (thường đ
 
 Dùng sed để find and replace một string trong file
 
-Ví dụ muốn replace chữ "hello" thành "hi" trong file temp.txt: 
+Ví dụ muốn replace chữ "hello" thành "hi" đầu tiên trong từng dòng trong file file temp.txt: 
 ```
- sed 's/hello/hi/' /path/temp.txt
+ sed 's/hello/hi/' /home/trung/temp.txt > /home/trung/temp.txt
 ```
 Ví dụ muốn replace chữ "hi" thành "hello" trong cả file temp.txt: 
 ```
- sed 's/hi/hello/g' /path/temp.txt
+ sed 's/hi/hello/g' /home/trung/temp.txt > /home/trung/temp.txt
 ```
 **10. traceroute/tracert command**
 ```
