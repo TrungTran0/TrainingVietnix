@@ -29,6 +29,7 @@ php -v
 systemctl restart apache2
 ```
 **Tạo 2 directory /var/www/html/wordpress và /var/www/html/laravel và tải 2 framework wordpress và laravel về**
+
 **Tải mysql:**
 ```
 sudo apt update
