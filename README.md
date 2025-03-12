@@ -23,3 +23,4 @@
 ### 3. [Lợi ích khi dùng Nginx làm reverse proxy trên 1 server](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%203/L%E1%BB%A3i%20%C3%ADch%20khi%20d%C3%B9ng%20Nginx%20l%C3%A0m%20reverse%20proxy%20tr%C3%AAn%201%20server.md)
 ### 4. [Lý thuyết liên quan về hosting](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%203/L%C3%BD%20thuy%E1%BA%BFt%20li%C3%AAn%20quan%20v%E1%BB%81%20hosting.md)
 ### 5. [Kiến thức LPI cơ bản](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%203/Ki%E1%BA%BFn%20th%E1%BB%A9c%20LPI%20c%C6%A1%20b%E1%BA%A3n.md)
+### 6. [Cài đặt Nginx làm reverse proxy cho Apache](https://github.com/TrungTran0/TrainingVietnix/blob/main/Tu%E1%BA%A7n%203/C%C3%A0i%20%C4%91%E1%BA%B7t%20Nginx%20l%C3%A0m%20reverse%20proxy%20cho%20Apache.md)
