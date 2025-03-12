@@ -273,7 +273,7 @@ Swap:        5861372           0     5861372
 
 **28. df command**
 
-Xem dung lượng disk
+- Xem dung lượng disk
 ```
 trung-vietnix@trungvietnix:~$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
@@ -286,4 +286,4 @@ tmpfs           5,0M  8,0K  5,0M   1% /run/lock
 tmpfs           2,0G  2,6M  2,0G   1% /run/user/1000
 ```
 
-Phân vùng / là phân vùng root chứa tất cả dữ liệu hệ thống của máy, phân vùng này rất quan trọng.
+- Phân vùng mount đến / là phân vùng root chứa tất cả dữ liệu hệ thống của máy, phân vùng này rất quan trọng và nó thường được cấp dung lượng nhiều nhất.
