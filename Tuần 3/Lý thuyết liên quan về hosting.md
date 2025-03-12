@@ -97,10 +97,18 @@ Ví dụ về cách phân giải tên miền khi truy cập đến vietnix.vn
 ```
 - Các loại record DNS:
 
-    A Record: Dùng để xác định địa IP của tên miền
+    A Record: Dùng để xác định địa chỉ IPv4 của tên miền
+  
 Ví dụ A record:
 ```
 vietnix.tech IN A 179.23.220.220.
+```
+
+    AAAA Record: Dùng để xác định địa chỉ IPv6 của tên miền
+
+Ví dụ AAAA record:
+```
+vietnix.tech IN AAAA fe80::357d:f9ea:8358:123f.
 ```
     CNAME Record: Dùng để chuyển hướng tên miền này sang tên miền khác.
 Ví dụ:
