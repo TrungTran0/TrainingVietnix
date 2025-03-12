@@ -77,12 +77,19 @@ Dùng sed để find and replace một string trong file
 
 Ví dụ muốn replace chữ "hello" thành "hi" đầu tiên trong từng dòng trong file file temp.txt: 
 ```
- sed 's/hello/hi/' /home/trung/temp.txt > /home/trung/temp.txt
+ sed -i 's/\bhello\b/hi/' /home/trung/temp.txt
 ```
-Ví dụ muốn replace chữ "hi" thành "hello" trong cả file temp.txt: 
+
+Tham số -i dùng để chỉnh sửa file trực tiếp và sử dụng \b để bao bọc từ cần replace để đảm bảo replace chính xác
+
+![image](https://github.com/user-attachments/assets/a29c5738-426b-4f30-b539-d1403cd34ddd)
+
+Ví dụ muốn replace chữ "hello" thành "sunny" trong cả file temp.txt ta chỉ cần thêm tham số g ở cuối như ví dụ dưới: 
 ```
- sed 's/hi/hello/g' /home/trung/temp.txt > /home/trung/temp.txt
+ sed -i 's/\bhello\b/sunny/g' /home/trung/temp.txt
 ```
+![image](https://github.com/user-attachments/assets/ddfb2912-e221-4a5f-9aa1-20a1603ebc0c)
+
 **10. traceroute/tracert command**
 ```
 trung-vietnix@trungvietnix:~$ traceroute vietnix.vn
