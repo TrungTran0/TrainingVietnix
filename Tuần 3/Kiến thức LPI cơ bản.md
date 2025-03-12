@@ -1,22 +1,34 @@
 ## Kiến thức LPI cơ bản
 
-**1. Ping đến vietnix.vn**
-
+**1. Ping và hping3**
+```
 trung-vietnix@trungvietnix:~$ ping vietnix.vn
-
 PING vietnix.vn (103.90.224.90) 56(84) bytes of data.
-
 64 bytes from 103.90.224.90: icmp_seq=1 ttl=53 time=6.40 ms
-
 64 bytes from 103.90.224.90: icmp_seq=2 ttl=53 time=16.9 ms
-
 64 bytes from 103.90.224.90: icmp_seq=3 ttl=53 time=11.6 ms
-
 64 bytes from 103.90.224.90: icmp_seq=4 ttl=53 time=8.49 ms
-
+```
 TTL (Time-to-live): là thời gian tồn tại của một gói tin trước khi bị xóa, mỗi khi gói tin đi qua một hop (ví dụ router) thì ttl sẽ giảm đi 1. TTL giúp lưu ngăn các gói tin đi sai đường nếu có lỗi định tuyến.
 
 Time: là thời gian mà gói tin đi từ nguồn đến đích và quay trở lại, time giúp ta biết thời gian phản hồi, được tính bằng mili giây.
+
+Thực hiện hping3 đến vietnix.vn
+```
+trung-vietnix@trungvietnix:~$ sudo hping3 vietnix.vn
+[sudo] password for trung-vietnix:          
+HPING vietnix.vn (wlp1s0 103.90.224.90): NO FLAGS are set, 40 headers + 0 data bytes
+^C
+--- vietnix.vn hping statistic ---
+96 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+```
+
+- Kết quả của hping3 đến vietnix.vn là không có phản hồi, 100% packet đã bị drop vì một số lý do như firewall đã chặn packet đến từ công cụ hping3 hoặc chưa hoàn thành bắt tay 3 bước hoặc một số thông số trong gói chưa hợp lệ.
+- hping3 là công cụ quét mạng và máy phân tích cho giao thức TCP/IP, thay vì ping chỉ sử dụng gói ICMP thì hping3 có thể sử dụng giao thức TCP
+- hping3 có thể custom tùy TCP flag (SYN, ACK, FIN, xmas,...) cho gói tin nó muốn gửi
+- hping3 còn được sử dụng như một công cụ DoS SYN flood
+- Chức năng của hping3 nhiều hơn hoàn toàn so với ping
 
 **2. SSH command**
 ```
