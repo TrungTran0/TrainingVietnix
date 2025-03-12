@@ -264,13 +264,13 @@ st:	Phần trăm CPU bị steal trong môi trường ảo hóa.
 **27. free command**
 
 trung-vietnix@trungvietnix:~$ free
-
+```
                total        used        free      shared  buff/cache   available
                
 Mem:        20273992     6305720    11956124     1394352     3737488    13968272
 
 Swap:        5861372           0     5861372
-
+```
 - ram used: là dung lượng ram đang được sử dụng hiện tại
 - free: là dung lượng còn trống hay available
 - buff/cache: dung bộ nhớ dành cho cache và buffer
