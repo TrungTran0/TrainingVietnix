@@ -1,10 +1,31 @@
 ## 1. SSL
 
 - SSL (Secure Socket Layer) là một giao thức bảo mật giúp mã hóa dữ liệu trước khi truyền tải từ client lên server để đảm bảo tính toàn vẹn và tính bí mật
-- Có 3 cách chứng thực SSL:
-  + DV SSL (Domain Validated): Chứng chỉ được xác thực với cấp độ tên miền
-  + OV SSL (Organization Validated): Chứng chỉ được xác thực với cấp độ doanh nghiệp/tổ chức
-  + EV SSL (Extended Validated): Chứng chỉ được xác thực với cấp độ doanh nghiệp/tổ chức mở rộng, nghiêm ngặt hơn thường các doanh nghiệp lớn đa quốc gia mới sử dụng
+- Có 2 cách chứng thực SSL chính:
+    + Chứng thực theo kiểu One-Way SSL: chỉ có máy khách xác thực với máy chủ để đảm bảo rằng nó nhận được dữ liệu từ máy chủ dự định (không bị giả mạo bởi hacker)
+      ```
+      1. Máy khách yêu cầu một số dữ liệu được bảo vệ từ máy chủ trên giao thức HTTPS. Điều này khởi tạo quá trình bắt tay SSL/TLS.
+      2. Máy chủ trả lại chứng chỉ công khai của mình cho máy khách cùng với tin nhắn hello server.
+      3. Máy khách xác thực/xác minh chứng chỉ đã nhận. Máy khách xác minh chứng chỉ thông qua cơ quan cấp chứng chỉ (CA) đối với các chứng chỉ do CA ký.
+      4. Máy khách SSL/TLS gửi chuỗi byte ngẫu nhiên cho phép cả máy khách và máy chủ tính toán khóa bí mật để sử dụng để mã hóa dữ liệu tin nhắn tiếp theo. Bản thân chuỗi byte ngẫu nhiên được mã hóa bằng         khóa công khai của máy chủ.
+      5. Sau khi thống nhất về khóa bí mật này, máy khách và máy chủ sẽ giao tiếp thêm để truyền dữ liệu thực tế bằng cách mã hóa/giải mã dữ liệu bằng khóa này.
+      ```
+      Hình ảnh minh họa One-Way SSL
+      
+      ![image](https://github.com/user-attachments/assets/2d0664af-bcc5-4795-8fec-93c43ab92901)
+      
+    + Chứng thực theo kiểu Two-Way (Mutual) SSL: Ngược lại với SSL One-Way, Two-way SSL yêu cầu cả máy khách và máy chủ đều xác thực lẫn nhau để đảm bảo rằng cả hai bên tham gia giao tiếp đều đáng tin cậy. Cả hai bên chia sẻ chứng chỉ công khai của họ với nhau và sau đó xác minh/xác thực.
+      ```
+      1. Client yêu cầu một tài nguyên được bảo vệ qua giao thức HTTPS và quá trình bắt tay SSL/TSL bắt đầu.
+      2. Server trả về chứng chỉ công khai của mình cho client cùng với server hello.
+      3. Client xác thực/xác minh chứng chỉ đã nhận. Client xác minh chứng chỉ thông qua cơ quan cấp chứng chỉ (CA) đối với các chứng chỉ do CA ký.
+      4. Nếu chứng chỉ Server được xác thực thành công, client sẽ cung cấp chứng chỉ công khai của mình cho server.
+      5. Server xác thực/xác minh chứng chỉ đã nhận. Server xác minh chứng chỉ thông qua cơ quan cấp chứng chỉ (CA) đối với các chứng chỉ do CA ký.
+      6. Sau khi hoàn tất quá trình bắt tay, client và server giao tiếp và truyền dữ liệu với nhau được mã hóa bằng các khóa bí mật được chia sẻ giữa hai bên trong quá trình bắt tay.
+      ```
+      Hình ảnh minh họa Two-Way SSL
+
+      ![image](https://github.com/user-attachments/assets/6dce163c-29c6-4f19-96a3-14f265e0836b)
 - CSR (Certificate Signing Request) là một tệp yêu cầu ký chứng chỉ được tạo ra khi yêu cầu chứng chỉ SSL từ một CA (Certificate Authority). Tệp này chứa thông tin như khóa công khai, tên miền, thông tin tổ chức và các chi tiết khác để CA có thể xác thực yêu cầu và cấp chứng chỉ SSL.
 - Generate by openssl:
   ```
@@ -98,22 +119,40 @@ Ví dụ về cách phân giải tên miền khi truy cập đến vietnix.vn
 
 - Các loại record DNS:
 
-      + A Record: Dùng để xác định địa chỉ IPv4 của tên miền
+
+  + A Record: Dùng để xác định địa chỉ IPv4 của tên miền
   
-Ví dụ A record:
-      + AAAA Record: Dùng để xác định địa chỉ IPv6 của tên miền
-Ví dụ AAAA record:
-vietnix.tech IN AAAA fe80::357d:f9ea:8358:123f.
-      + CNAME Record: Dùng để chuyển hướng tên miền này sang tên miền khác.
-Ví dụ:
-www.vietnix.vn IN CNAME vietnix.vn.
-mail.vietnix.vn IN CNAME mailserver.vietnix.vn.
-      + MX Record: Dùng để tìm xác định máy chủ email
-Ví dụ MX record:
-MX record: vietnix.tech IN MX 5 mail.vietnix.tech (số 5 ở đây là priority, số càng thấp thì priority càng cao)
-      + TXT Record: Dùng để lưu trữ thông tin về domain, thường dùng cho các mục đích như SPF, DKIM.
-      + NS Record: Dùng để xác định máy chủ DNS của domain.
-Ví dụ NS Record:
-vietnix.vn. NS ns1.vietnix.net.
-vietnix.vn. NS ns1.vietnix.net.
+        Ví dụ A record:
+
+        vietnix.tech IN A 192.168.1.1.
+
+  + AAAA Record: Dùng để xác định địa chỉ IPv6 của tên miền
+      
+        Ví dụ AAAA record:
+
+        vietnix.tech IN AAAA fe80::357d:f9ea:8358:123f.
+
+  + CNAME Record: Dùng để chuyển hướng tên miền này sang tên miền khác.
+      
+        Ví dụ:
+
+        www.vietnix.vn IN CNAME vietnix.vn.
+
+        mail.vietnix.vn IN CNAME mailserver.vietnix.vn.
+
+  + MX Record: Dùng để tìm xác định máy chủ email
+      
+        Ví dụ MX record:
+
+        MX record: vietnix.tech IN MX 5 mail.vietnix.tech (số 5 ở đây là priority, số càng thấp thì priority càng cao)
+
+  + TXT Record: Dùng để lưu trữ thông tin về domain, thường dùng cho các mục đích như SPF, DKIM.
+      
+  + NS Record: Dùng để xác định máy chủ DNS của domain.
+  
+        Ví dụ NS Record:
+
+        vietnix.vn. NS ns1.vietnix.net.
+
+        vietnix.vn. NS ns1.vietnix.net.
 
