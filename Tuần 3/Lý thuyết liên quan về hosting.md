@@ -88,43 +88,32 @@ dig 179.23.200.xxx.in-addr.arpa.
 ![image](https://github.com/user-attachments/assets/77f30306-9419-4175-b684-43614a73992c)
 
 Ví dụ về cách phân giải tên miền khi truy cập đến vietnix.vn
-```
+
     1. Browser sẽ kiểm tra cache nếu trước đó ta đã truy cập vietnix.vn thì nó sẽ lấy IP trong cache ra và sử dụng luôn.
     2. Nếu chưa có cache thì nó sẽ gửi request để hỏi DNS Server của nhà mạng - ISP.
     3. Resolver gửi request lên Root DNS Server, nhưng hiện tại server này nó chưa biết IP nhưng nó sẽ lấy TLD .vn
     4. Root DNS chỉ đến TLD Server .vn tìm đến cung cấp tên miền quốc gia, server này sẽ tiếp tục chỉ đến DNS của vietnix.vn
     5. TLD server gửi request đến authority domain của vietnix để lấy record IP chính xác. Và cuối cùng là trả về IP.
-```
+
+
 - Các loại record DNS:
 
-    A Record: Dùng để xác định địa chỉ IPv4 của tên miền
+      + A Record: Dùng để xác định địa chỉ IPv4 của tên miền
   
 Ví dụ A record:
-```
-vietnix.tech IN A 179.23.220.220.
-```
-
-    AAAA Record: Dùng để xác định địa chỉ IPv6 của tên miền
-
+      + AAAA Record: Dùng để xác định địa chỉ IPv6 của tên miền
 Ví dụ AAAA record:
-```
 vietnix.tech IN AAAA fe80::357d:f9ea:8358:123f.
-```
-    CNAME Record: Dùng để chuyển hướng tên miền này sang tên miền khác.
+      + CNAME Record: Dùng để chuyển hướng tên miền này sang tên miền khác.
 Ví dụ:
-```
 www.vietnix.vn IN CNAME vietnix.vn.
 mail.vietnix.vn IN CNAME mailserver.vietnix.vn.
-```
-    MX Record: Dùng để tìm xác định máy chủ email
+      + MX Record: Dùng để tìm xác định máy chủ email
 Ví dụ MX record:
-```
 MX record: vietnix.tech IN MX 5 mail.vietnix.tech (số 5 ở đây là priority, số càng thấp thì priority càng cao)
-```
-  - TXT Record: Dùng để lưu trữ thông tin về domain, thường dùng cho các mục đích như SPF, DKIM.
-  - NS Record: Dùng để xác định máy chủ DNS của domain.
+      + TXT Record: Dùng để lưu trữ thông tin về domain, thường dùng cho các mục đích như SPF, DKIM.
+      + NS Record: Dùng để xác định máy chủ DNS của domain.
 Ví dụ NS Record:
-```
 vietnix.vn. NS ns1.vietnix.net.
 vietnix.vn. NS ns1.vietnix.net.
-```
+
