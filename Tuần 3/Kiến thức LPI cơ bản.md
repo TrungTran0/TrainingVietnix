@@ -67,6 +67,10 @@ Ví dụ muốn replace chữ "hello" thành "hi" trong file temp.txt:
 ```
  sed 's/hello/hi/' /path/temp.txt
 ```
+Ví dụ muốn replace chữ "hi" thành "hello" trong cả file temp.txt: 
+```
+ sed 's/hello/hi/g' /path/temp.txt
+```
 **10. traceroute/tracert command**
 ```
 trung-vietnix@trungvietnix:~$ traceroute vietnix.vn
