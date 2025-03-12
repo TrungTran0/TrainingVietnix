@@ -193,8 +193,10 @@ Ví dụ Add thêm một ổ cứng sdb ~ 5gb
 sudo mount /dev/sdb1 /mnt/test
 df -h -> để kiểm tra
 ```
-- Umount /mnt/test: sudo umount /mnt/test
-
+- Umount /mnt/test:
+```
+sudo umount /mnt/test
+```
 **23. Symbolic Links, Hard Links command**
 
 - Khi dùng symbol link sẽ tạo ra một file, file này được trỏ đến file gốc nhưng không có nội dung, nhưng nếu thực hiện chỉnh sửa (vim) file này thì nó sẽ chuyển đến chỉnh sửa ở file gốc.
