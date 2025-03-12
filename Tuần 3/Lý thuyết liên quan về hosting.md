@@ -39,11 +39,15 @@ pendingTransfer: tên miền đang chờ Chuyển đổi nhà đăng ký.
 ```
 - Subdomain là một phần của domain chính, có thể tạo không giới hạn subdomain và có nội dung khác với domain chính. Ví dụ: blog.vietnix.vn, news.vietnix.vn
 - Virtual Hosts:
-  +  cho phép nhiều trang web hoặc dịch vụ có thể hoạt động trên cùng một địa chỉ IP và máy chủ để giảm chi phí,
-  +  Virtual host có kiểu như: name-based, ip-base hoặc port-base
-      +  Name-Based Virtual Host: Cho phép nhiều tên miền sử dụng chung một địa chỉ IP.
-      +  IP-Based Virtual Host: Gán mỗi tên miền một địa chỉ IP riêng biệt.
-      +  Port-Based Virtual Host: Sử dụng số cổng (Port) để phân biệt các website trên cùng một địa chỉ IP.
+  +  cho phép nhiều trang web hoặc dịch vụ có thể hoạt động trên cùng một địa chỉ IP và máy chủ để giảm chi phí.
+
+  +  Virtual host có kiểu như: name-based, ip-base hoặc port-base:
+      +  Name-Based Virtual Host: Cho phép nhiều tên miền sử dụng chung một địa chỉ IP, được phân biệt bằng tên miền.
+        ![image](https://github.com/user-attachments/assets/db1f68ea-8fab-476c-b596-4b774b86dafd)
+      +  IP-Based Virtual Host: Thay vì tên miền khác thì IP-base sẽ là mỗi IP khác.
+        ![image](https://github.com/user-attachments/assets/ac0bae9a-2c9e-49ae-8a52-70fccfa12fc7)
+      +  Port-Based Virtual Host: Sử dụng số port để phân biệt các website trên cùng một địa chỉ IP hoặc tên miền.
+        ![image](https://github.com/user-attachments/assets/040cf8b3-4e3c-4ce3-9faa-6767712f7fff)
 
 ## 3. Mail Server
 - MX Record là viết tắt của Mail Exchanger Record được định nghĩa là một bản ghi trong DNS zone dùng để định vị Mail Server cho một Domain. Một tên miền có thể được gán bởi nhiều bản ghi MX, việc này giúp cho các email của bạn không bị mất đi dữ liệu nếu ngưng hoạt động một thời gian. Ví dụ khi ta gửi email tới trung@vietnix.vn, mail server sẽ xác định domain vietnix.vn có MX record trỏ đến mail server nào ví dụ như mail.vietnix.vn, thì nó sẽ tìm địa chỉ IP của mail server mail.vietnix.vn và gửi đến địa chỉ IP mail đó, và mail server mail.vietnix.vn sẽ tìm user trung để gửi mail đến.
