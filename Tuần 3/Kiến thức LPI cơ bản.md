@@ -163,7 +163,7 @@ Phân quyền bằng số, phân quyền bằng chữ:
    + Với quyền 3 => -wx (0+2+1 <=> 2^1+2^0)
    + Với quyền 2 => -w- (0+2+0 <=> 2^1)
    + Với quyền 1 => --x (0+0+1 <=> 2^0)
-- Thêm quyền thực thi cho file: chmod +x /path/file
+- Thêm quyền thực thi cho file: chmod +x /path/file (lệnh này sẽ cấp quyền thực thi cho cả owner, group và other)
 Đổi owner user/group
 ```
 - Đổi đồng thời owner user và group: chown root /path/file
