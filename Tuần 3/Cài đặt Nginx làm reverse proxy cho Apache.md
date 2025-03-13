@@ -125,7 +125,7 @@ ln -s /etc/nginx/sites-available/laravel /etc/nginx/sites-enabled/
 **Cuối cùng thực hiện cài SSL cho 2 trang web**
 ```
 certbot --nginx -d wordpress.trung.vietnix.tech
-certbot --nginx -d lara.trung.vietnix.tech
+certbot --nginx -d laravel.trung.vietnix.tech
 ```
 Khi cài xong thì 2 file /etc/nginx/sites-available/laravel /etc/nginx/sites-available/wordpress sẽ được certbot generate ra một số trường như dưới đây:
 ![image](https://github.com/user-attachments/assets/6cda3e03-49e7-43b8-9697-e71ce891de6f)
@@ -134,5 +134,24 @@ Khi cài xong thì 2 file /etc/nginx/sites-available/laravel /etc/nginx/sites-av
 
 # Cấu hình Apache chỉ listen trên một port
 
+**Cấu hình site phía Nginx**
+
 Sử dụng một file cấu hình site bên nginx thay vì trước đó là wordpress và nginx trong địa chỉ /etc/nginx/site-available/
+Phía bên nginx chỉ cần gộp 2 site thành 1 site, và phần proxy_pass cùng trỏ về port 8080
+
 ![image](https://github.com/user-attachments/assets/3a081221-329c-47e0-8c5a-3a6e0bd7c9a5)
+
+**Cấu hình site phía Apache**
+
+Bên Apache ta cũng gộp lại thành 1 file conf, và cho virtualhost cùng lắng nghe trên port 8080 
+![image](https://github.com/user-attachments/assets/f01af6ee-56b8-4b66-bb2a-70b41ad228c2)
+
+-> Dường như là chỉ cần chuyển port lại về cùng 1 port, khi request đến nó sẽ tự phân biệt request bằng ServerName và trỏ đến docroot của site đó.
+
+**Cấu hình SSL**
+
+certbot --nginx -d wordpress.trung.vietnix.tech -d laravel.trung.vietnix.tech
+Sau khi xong, certbot sẽ tự generate thêm cấu hình bên nginx
+
+![image](https://github.com/user-attachments/assets/be05dd77-000d-428a-8dc9-a44479566920)
+
