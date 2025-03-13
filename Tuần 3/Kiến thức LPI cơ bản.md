@@ -60,12 +60,17 @@ cat nhiều dòng vào 1 file bằng EOF: cat /path/file > /path/newfile.txt
 
 **7. tail/head command**
 ```
-cat /path/file | tail (hiển thị phần đuôi của file)
-cat /path/file | tail -n 5 (hiển thị 5 dòng cuối của file)
-
-cat /path/file | head (hiển thị phần đầu của file)
-cat /path/file | head -n 5 (hiển thị 5 dòng đầu của file)
+tail /path/file -> hiển thị phần đuôi của file
+tail -n 5 /path/file -> hiển thị 5 dòng cuối của file
 ```
+![image](https://github.com/user-attachments/assets/6aa114ad-1091-4e11-b53f-c965d1f83e26)
+
+```
+head /path/file -> hiển thị phần đầu của file
+head -n 5 /path/file -> hiển thị 5 dòng cầu của file
+```
+![image](https://github.com/user-attachments/assets/afa27363-c2bd-4f7f-9620-d0ec1782480b)
+
 **8. tail và tailf**
 ```
 tail /path/file -> giúp xem phần đuôi của file
