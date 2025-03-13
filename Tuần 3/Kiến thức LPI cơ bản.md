@@ -157,12 +157,12 @@ Phân quyền bằng số, phân quyền bằng chữ:
 
 - Cho phép owner đọc ghi thực thi, group đọc thực thi, user đọc: chmod 754 /path/file hoặc đệ quy chmod -R 754 /path/directory
    + Với quyền 7 => rwx (4+2+1 <=> 2^2+2^1+2^0)
-   + Với quyền 6 => rw- (4+2+1 <=> 2^2+2^1+2^0)
-   + Với quyền 5 => r-x (4+2+1 <=> 2^2+2^1+2^0)
-   + Với quyền 4 => rw- (4+2+1 <=> 2^2+2^1+2^0)
-   + Với quyền 3 => rwx (4+2+1 <=> 2^2+2^1+2^0)
-   + Với quyền 2 => rwx (4+2+1 <=> 2^2+2^1+2^0)
-   + Với quyền 1 => rwx (4+2+1 <=> 2^2+2^1+2^0)
+   + Với quyền 6 => rw- (4+2+0 <=> 2^2+2^1)
+   + Với quyền 5 => r-x (4+0+1 <=> 2^2+2^0)
+   + Với quyền 4 => r-- (4+0+0 <=> 2^2)
+   + Với quyền 3 => -wx (0+2+1 <=> 2^1+2^0)
+   + Với quyền 2 => -w- (0+2+0 <=> 2^1)
+   + Với quyền 1 => --x (0+0+1 <=> 2^0)
 - Thêm quyền thực thi cho file: chmod +x /path/file
 Đổi owner user/group
 ```
