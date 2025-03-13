@@ -132,4 +132,7 @@ Khi cài xong thì 2 file /etc/nginx/sites-available/laravel /etc/nginx/sites-av
 
 ![image](https://github.com/user-attachments/assets/cf883574-7135-4329-9c46-5ad64281db56)
 
+# Cấu hình Apache chỉ listen trên một port
 
+Sử dụng một file cấu hình site bên nginx thay vì trước đó là wordpress và nginx trong địa chỉ /etc/nginx/site-available/
+![image](https://github.com/user-attachments/assets/3a081221-329c-47e0-8c5a-3a6e0bd7c9a5)
