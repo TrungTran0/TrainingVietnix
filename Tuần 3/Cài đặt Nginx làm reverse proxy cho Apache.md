@@ -11,6 +11,7 @@ sudo apt -y install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt -y install php7.4
+sudo apt-get install -y php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath
 php -v
 ```
 **Chỉnh sửa port cho apache để nó listen ở port 8080 và 8081 trong file /etc/apache2/ports.conf:**
@@ -120,7 +121,7 @@ ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/
 ln -s /etc/nginx/sites-available/laravel /etc/nginx/sites-enabled/
 ```
 
-**Tiếp theo cấu hình database phù hợp vào file wp-config.php của wordpress và file .env của laravel**
+**Tiếp theo cấu hình database phù hợp vào file wp-config.php của wordpress và file .env của laravel (php artisan migrate - để đồng bộ database cho laravel**
 
 **Cuối cùng thực hiện cài SSL cho 2 trang web**
 ```
