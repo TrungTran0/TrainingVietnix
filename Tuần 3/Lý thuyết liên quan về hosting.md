@@ -17,12 +17,12 @@
   
 - PEM (Privacy Enhanced Mail) là một định dạng mã hóa phổ biến được sử dụng cho chứng chỉ SSL và các khóa bảo mật. Nó là một kiểu file Public Key Infrastructure (PKI) sử dụng cho key và cho chứng chỉ, và thường có phần mở rộng .pem, .crt, .cer, hoặc .key.
 - Private Key là một phần quan trọng trong quá trình mã hóa và giải mã của SSL, khi ta tạo một chứng chỉ SSL private key ký chữ ký vào csr, private key sẽ được lưu trữ trên máy chủ và dùng để giải mã các dữ liệu được mã hóa bằng public key.
-- PFX (Personal Information Exchange) là file chứa cả private key và csr, nếu các tệp còn riêng lẻ trên windows ta cần gộp lại thành 1 file pfx, ta thực hiện chuyển đổi sang định dạng pkcs12:
+- PFX (Personal Information Exchange) là file chứa cả private key và csr, nếu các tệp còn riêng lẻ trên windows ta cần gộp lại thành 1 file pfx, ta thực hiện chuyển đổi sang định dạng pfx:
   ```
-  openssl pkcs12 -export -out certificate.p12 -inkey private.key -in full_chain.crt
+  openssl pkcs12 -export -certpbe PBE-SHA1-3DES -keypbe PBE-SHA1-3DES -nomac -out domain.pfx -inkey private.key -in certificate.crt -CAfile  ca-bundle.crt
+
   ```
 
-  Sau khi convert cert sang định sang pkcs12, ta thực hiện đổi đuôi file sang pfx không cần dùng convert tool, vì 2 định dạng pkcs12 và pfx cấu trúc format binary giống nhau.
   
 ## 2. Domain
 - Domain là tên dùng để nhận diện trang web giúp truy cập trang web dễ dàng hơn là địa chỉ IP.
