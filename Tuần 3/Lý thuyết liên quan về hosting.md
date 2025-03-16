@@ -36,6 +36,8 @@ inactive: Tên miền đã được đăng ký nhưng Name Server chưa thể li
 pendingCreate: Đang chờ Đăng ký
 pendingUpdate: tên miền đang chờ update
 pendingTransfer: tên miền đang chờ Chuyển đổi nhà đăng ký.
+serverHold: Trạng thái tên miền không được kích hoạt trong DNS.
+clientHold: Trạng thái tạm ngừng tên miền (suspend tên miền).
 ```
 - Subdomain là một phần của domain chính, có thể tạo không giới hạn subdomain và có nội dung khác với domain chính. Ví dụ: blog.vietnix.vn, news.vietnix.vn
 - Virtual Hosts:
