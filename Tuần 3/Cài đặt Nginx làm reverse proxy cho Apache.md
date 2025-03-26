@@ -108,11 +108,6 @@ server {
         log_not_found off;
         access_log off;
       }
-    location ~* \.(?:svgz?|ttf|ttc|otf|eot|woff2?)$ {
-        add_header Access-Control-Allow-Origin "*";
-        expires 7d;
-        access_log off;
-    }
 }
 ```
 **Sau khi tạo 2 site bên nginx ta tạo symlink đến /etc/nginx/site-enabled/**
